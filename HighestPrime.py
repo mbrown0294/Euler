@@ -18,16 +18,26 @@ def isPrime(n):
 
 def primesList(n):
     primes = (n+1) * [True]
-    primes[0] = False
-    primes[1] = False
     count = 0
-    for x in range(3, n + 1):
-        if !isPrime(x):
-            primes[x] = False
+    for x in range(n + 1):
+        if primes[x] == False:
+            continue
+        elif isPrime(x):
+            primes[x] = True
             count += 1
-
-
+        else:
+            primes[x] = False
+        y = 2
+        while (x * y) < (n + 1):
+            primes[x * y] = False
+            y += 1
+    done = count * [0]
+    z = 0
+    for x in range(n + 1):
+        if primes[x] == True:
+            done[z] = primes[x]
+            z += 1
+    return done
 
 
 print(highestPrime(600851475143))
-
