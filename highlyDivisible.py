@@ -51,16 +51,15 @@ def overNDivisors(n):
 
 def overNDivisors(n):
     nums = []
-    x = 1
+    x = 1000
     while True:
         triNum = triangleNum(x)
         fac = factorCount(triNum)
-        if fac > n:
+        print(fac)
+        if fac >= n:
             break
         x += 1
     return triNum
 
 
-
-
-print(overNDivisors(500))
+print(overNDivisors(500)) #takes for-freaking-ever. like FOREVER!!
